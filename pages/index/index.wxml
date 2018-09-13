@@ -5,7 +5,7 @@
     <text>{{ item.title }}/ {{ item.rate }}</text>
   </view> 
 
-  <view class='loading'>
+  <view class='loading' wx:if="{{loading}}">
     <image class='' src='/assets/loading/loading-bars.svg' mode='widthFix'></image>
   </view>
 
