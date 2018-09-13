@@ -1,0 +1,12 @@
+<!--pages/index/index.wxml-->
+<scroll-view scroll-y="true" style='height:100%;' lower-threshold="50" bindscrolltolower="lower">
+  <view class='item' wx:for='{{ list }}' wx:key='{{ index }}' >
+    <image src='{{item.cover}}'></image>
+    <text>{{ item.title }}/ {{ item.rate }}</text>
+  </view> 
+
+  <view class='loading'>
+    <image class='' src='/assets/loading/loading-bars.svg' mode='widthFix'></image>
+  </view>
+
+</scroll-view>
