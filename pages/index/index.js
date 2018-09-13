@@ -25,10 +25,17 @@ Page({
     } 
   },
 
+  tap (e) {
+    console.log(e.currentTarget.dataset.id);
+    wx.navigateTo({
+      url: `/pages/detail/detail?id=${e.currentTarget.dataset.id}`,
+    })
+  },
+
   loadData () {
     let { start, list } = this.data;
     wx.showLoading({
-      title: '正在加载。。。',
+      title: '正在加载...',
       mask: true
     });
     this.setData({
@@ -36,7 +43,7 @@ Page({
     });
     wx.request({
       url: `https://data.miaov.com/h5-view/v/movie/list/?start=${this.data.start}`,
-      success: (res) => {
+      success: (res) => { 
         console.log(res.data.subjects);
         start += 20;
         list.push( ...res.data.subjects );
