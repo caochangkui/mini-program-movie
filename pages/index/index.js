@@ -17,6 +17,7 @@ Page({
     this.loadData();
   },
 
+  // 上拉加载
   lower () {
     console.log('lower');
     if (!this.data.loading) {
