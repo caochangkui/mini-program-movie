@@ -5,7 +5,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-    detail: {}
+    detail: {},
+    loading: true
   },
 
   /**
@@ -16,14 +17,19 @@ Page({
   },
 
   loadDetail (id) {
+    wx.showLoading({
+      title: '详情加载中...',
+    })
     wx.request({
       url: `https://data.miaov.com/h5-view/v/movie/detail/?id=${id}`,
       success: (res) => {
         console.log(res);
         this.setData({
-          detail: res.data
+          detail: res.data,
+          loading: false
         })
-      }
+        wx.hideLoading();
+      } 
     })
   },
 
