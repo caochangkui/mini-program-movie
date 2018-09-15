@@ -1,14 +1,2 @@
 <!--pages/index/index.wxml-->
-<!-- <scroll-view scroll-y="true" style='height:100%;' lower-threshold="50" bindscrolltolower="lower">
-  <view class='item' wx:for='{{ list }}' wx:key='{{ index }}' data-id='{{ item.id }}' bindtap='tap' >
-    <image src='{{item.cover}}'></image>
-    <text>{{ item.title }}/ {{ item.rate }}</text>
-  </view> 
-
-  <view class='loading' wx:if="{{loading}}">
-    <image class='' src='/assets/loading/loading-bars.svg' mode='widthFix'></image>
-  </view>
-
-</scroll-view> -->
-<import src='/common/template/list.wxml' />
-<template is='list-template' data='{{ list, loading }}'> </template>
+<text>pages/index/index.wxml</text>
