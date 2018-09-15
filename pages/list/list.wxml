@@ -1,0 +1,8 @@
+<!--pages/list/list.wxml-->
+<view wx:for='{{ list }}' wx:key='{{ id }}' class='wrap'>
+  <image src='{{ item.al.picUrl }}'></image>
+  <view class='intro'>
+    <text class='name'>{{ item.name }}</text>
+    <text>{{ item.ar[0].name }}</text>
+  </view>
+</view>

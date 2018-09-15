@@ -1,14 +1,11 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/subject/subject",
-    "pages/user/user",
-    "pages/detail/detail",
-    "pages/subject-list/subject-list"
+    "pages/list/list"
   ],
   "window": {
     "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#07b593",
+    "navigationBarBackgroundColor": "#C20C0C",
     "navigationBarTitleText": "Music",
     "navigationBarTextStyle": "#fff"
   }

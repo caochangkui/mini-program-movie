@@ -1,2 +1,5 @@
 <!--pages/index/index.wxml-->
-<text>pages/index/index.wxml</text>
+<view class='wrap' wx:for="{{ type }}" wx:key="{{ index }}" data-id='{{ index }}' data-name='{{ item[index] }}' bindtap='tap'>
+  <text class='index'>{{ index + 1 }}. </text>
+  <text class='text'>{{ item[index] }}</text>
+</view>

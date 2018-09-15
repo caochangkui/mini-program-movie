@@ -1,1 +1,15 @@
 /* pages/index/index.wxss */
+page {
+  background: #eee;
+}
+.wrap {
+  padding: 30rpx;
+  margin: 20rpx 0;
+  background: #fff;
+}
+
+.wrap .index {
+  font-size: 30px;
+  color: red;
+  padding: 0 10px 0 0;
+}
