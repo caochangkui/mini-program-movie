@@ -19,6 +19,9 @@ Page({
       type: options.type
     })
     this.loadData(this.data.type);
+    wx.setNavigationBarTitle({
+      title: this.data.type
+    })
   },
 
   // 上拉加载

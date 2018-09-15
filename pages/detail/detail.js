@@ -27,6 +27,9 @@ Page({
         this.setData({
           detail: res.data,
           loading: false
+        });
+        wx.setNavigationBarTitle({
+          title: res.data.title,
         })
         wx.hideLoading();
       } 
