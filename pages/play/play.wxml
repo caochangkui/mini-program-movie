@@ -1,0 +1,9 @@
+<!--pages/play/play.wxml-->
+<view class='image-wrapper'>
+  <image src='{{ song.al.picUrl }}'></image>
+</view>
+<slider min='0' max='{{ duration }}' step='1' block-size="20"></slider>
+<view class='time'>
+  <text class='now'>00:00</text>
+  <text class='duration'>{{ duration }}</text>
+</view>

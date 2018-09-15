@@ -1,5 +1,5 @@
-// pages/list/list.js
-import url from "../../config/url.js"; // 引入配置文件
+import url from "../../config/url.js"
+let app  = getApp();  // 拿到app.js里面的内容
 
 Page({
 
@@ -7,7 +7,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-    list: []
+    song: {},
+    duration: 0
   },
 
   /**
@@ -15,33 +16,46 @@ Page({
    */
   onLoad: function (options) {
     console.log(options);
+    let { id } = options;
+
     wx.request({
-      url: `${url.list}?idx=${options.id}`,
+      url: `${url.song}?ids=${id}`,
       success: (res) => {
         console.log(res);
         this.setData({
-          list: res.data.playlist.tracks.slice(0, 20)
-        })
-        wx.setNavigationBarTitle({
-          title: options.type,
+          song: res.data.songs[0]
         })
       }
     })
-  },
+  
+    let { song } = app.globalData;
+    if (!song) {
+      song = app.globalData.song = wx.createInnerAudioContext();
+    }
+    song.src = `http://music.163.com/song/media/outer/url?id=${id}.mp3`;
+    song.play();
+    song.onPlay((res) => {
+      console.log('播放开始')
+    });
 
-  tap (e) {
-    console.log(e);
-    let { id } = e.currentTarget.dataset
-    wx.redirectTo({
-      url: `/pages/play/play?id=${id}`,
-    })
+    // 每次播放音乐是，设置duration为当前播放歌曲的长度
+    song.onTimeUpdate((res) => {
+      console.log(song);
+      if (this.data.duration !== song.duration) {
+        this.setData({
+          duration: song.duration
+        })
+      }
+    }) 
+    
+
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-  
+    
   },
 
   /**

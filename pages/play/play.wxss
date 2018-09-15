@@ -1,0 +1,24 @@
+/* pages/play/play.wxss */
+page {
+  background: #fff;
+}
+.image-wrapper {
+  text-align: center;
+  padding: 30rpx 0;
+}
+image  {
+  height: 500rpx;
+  width: 500rpx;
+  border: 20rpx solid #eee;
+  border-radius: 50%;
+  text-align: center
+}
+.now, .duration {
+  font-size: 14px;
+  color: red;
+}
+.time {
+  padding: 0 20rpx;
+  display: flex;
+  justify-content: space-between;
+}

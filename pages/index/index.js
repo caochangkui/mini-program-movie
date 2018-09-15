@@ -41,7 +41,7 @@ Page({
   },
 
   tap (e) {
-    let { id, name } = e.currentTarget.dataset;  // 结构赋值
+    let { id, name } = e.currentTarget.dataset;  // 解构赋值
     console.log(e)
     wx.navigateTo({
       url: `/pages/list/list?id=${id}&type=${name}`,
