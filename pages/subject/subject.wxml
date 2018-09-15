@@ -1,2 +1,5 @@
 <!--pages/subject/subject.wxml-->
-<text>pages/subject/subject.wxml</text>
+<view class='wrapper' wx:for='{{ list }}' wx:key='{{index}}'>
+  <image mode='widthFix' src='{{ item.url }}'></image>
+  <text>{{ item.type }}</text>
+</view>

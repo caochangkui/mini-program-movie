@@ -1,8 +1,8 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/user/user",
     "pages/subject/subject",
+    "pages/user/user",
     "pages/detail/detail"
   ],
   "window": {

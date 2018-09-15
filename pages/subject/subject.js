@@ -5,7 +5,28 @@ Page({
    * 页面的初始数据
    */
   data: {
-  
+    list: [
+      {
+        type: "动作",
+        url: "/assets/image/dongzuo.png"
+      },
+      {
+        type: "科幻",
+        url: "/assets/image/kehuan.png"
+      },
+      {
+        type: "动画",
+        url: "/assets/image/donghua.png"
+      },
+      {
+        type: "爱情",
+        url: "/assets/image/aiqing.png"
+      },
+      {
+        type: "喜剧",
+        url: "/assets/image/xiju.png"
+      }
+    ]
   },
 
   /**
