@@ -1,5 +1,5 @@
 <!--pages/subject/subject.wxml-->
-<view class='wrapper' wx:for='{{ list }}' wx:key='{{index}}'>
+<view class='wrapper' wx:for='{{ list }}' wx:key='{{index}}' data-type='{{ item.type }}' bindtap='tap'>
   <image mode='widthFix' src='{{ item.url }}'></image>
   <text>{{ item.type }}</text>
 </view>

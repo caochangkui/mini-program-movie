@@ -29,11 +29,18 @@ Page({
     ]
   },
 
+  tap (e) {
+    console.log(e.currentTarget.dataset.type);
+    wx.navigateTo({
+      url: `/pages/subject-list/subject-list?type=${e.currentTarget.dataset.type}`,
+    })
+  },
+
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+    
   },
 
   /**
