@@ -10,5 +10,5 @@
   </view>
 
 </scroll-view> -->
-<import src='/common/template/list.wxml' />
+<import src='/common/template/list.wxml' /> 
 <template is='list-template' data='{{ list, loading }}'> </template>
