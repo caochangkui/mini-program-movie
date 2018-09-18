@@ -11,7 +11,18 @@ image  {
   width: 500rpx;
   border: 20rpx solid #eee;
   border-radius: 50%;
-  text-align: center
+  text-align: center;
+}
+image.rotate {
+  animation: rotate 8s linear infinite normal;
+}
+@keyframes rotate {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 .now, .duration {
   font-size: 14px;

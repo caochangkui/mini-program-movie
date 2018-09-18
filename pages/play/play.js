@@ -8,7 +8,10 @@ Page({
    */
   data: {
     song: {},
-    duration: 0
+    duration: 0,
+    current: 0,
+    isDown: false, // 滑块是否按下
+    flag: true
   },
 
   /**
@@ -40,15 +43,56 @@ Page({
 
     // 每次播放音乐是，设置duration为当前播放歌曲的长度
     song.onTimeUpdate((res) => {
-      console.log(song);
-      if (this.data.duration !== song.duration) {
+      // console.log(song);
+      // 获取歌曲时长
+      if (this.data.duration !== song.duration) { 
         this.setData({
           duration: song.duration
         })
-      }
-    }) 
-    
+      };
 
+      // 获取歌曲当前已经播放的时长 
+      if (!this.data.isDown) {
+        this.setData({
+          current: song.currentTime
+        })
+      }
+      
+    }) 
+
+  },
+
+  // 正在滑动
+  changing () {
+    this.setData({
+      isDown: true
+    })
+  },
+
+  // 滑动结束
+  changed(e) {
+    console.log(e.detail)
+    this.setData({
+      isDown: false, // 记录滑块抬起
+      current: e.detail.value // 记录滑块抬起时的播放位置
+    })
+    app.globalData.song.seek(e.detail.value);
+  },
+
+  tap (){
+    let { song } = app.globalData;
+    song.paused ? song.play() : song.pause(); // 控制歌曲播放或暂停
+
+    if (this.data.flag) {
+      this.setData({
+        flag: false
+      })
+    } else {
+      this.setData({
+        flag: true
+      })
+    }
+    
   },
 
   /**
