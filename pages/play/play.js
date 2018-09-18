@@ -9,6 +9,9 @@ Page({
   data: {
     song: {},
     duration: 0,
+    lrc: {
+      "0": "正在获取歌词"
+    },
     current: 0,
     isDown: false, // 滑块是否按下
     flag: true
@@ -21,6 +24,27 @@ Page({
     console.log(options);
     let { id } = options;
 
+    // 获取歌词
+    wx.request({
+      url: `${url.lyric}?id=${id}`,
+      success: (res) => { 
+        let { lyric } = res.data.lrc;
+        console.log(lyric);
+        let r = /\[(.*?)](.*)/g;
+        let obj = {};
+
+        lyric.replace(r, ($0, $1, $2) => {
+          console.log($1, $2);
+          obj[$1.substring(0,5)] = $2;
+        });
+
+        this.setData({
+          lrc: obj
+        })
+      }
+    })
+
+    // 获取歌曲
     wx.request({
       url: `${url.song}?ids=${id}`,
       success: (res) => {

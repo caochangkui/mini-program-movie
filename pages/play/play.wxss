@@ -33,3 +33,11 @@ image.rotate {
   display: flex;
   justify-content: space-between;
 }
+.scroll {
+  height: 200rpx;
+  background: #eee;
+  text-align: center;
+  position: absolute;
+  left: 0;
+  bottom: 50rpx;
+}
