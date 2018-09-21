@@ -20,7 +20,7 @@ Page({
       success: (res) => {
         console.log(res);
         this.setData({
-          list: res.data.playlist.tracks.slice(0, 20)
+          list: res.data.playlist.tracks.slice(0, 40)
         })
         wx.setNavigationBarTitle({
           title: options.type,

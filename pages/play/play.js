@@ -14,7 +14,8 @@ Page({
     },
     current: 0,
     isDown: false, // 滑块是否按下
-    flag: true
+    flag: true,
+    currentLrc: ""
   },
 
   /**
