@@ -17,6 +17,6 @@
   <text class='now'>{{ foo.getHour(current / 60) }} : {{ foo.getHour(current % 60) }}</text>
   <text class='duration'>{{ foo.getHour(duration / 60) }} : {{ foo.getHour(duration % 60) }}</text>
 </view>
-<scroll-view class='scroll' scroll-y="true" scroll-into-view="{{currentLrc}}">
-  <view wx:for="{{ lrc }}" wx:key="{{index}}" id='el-{{index}}' > {{ lrc[index] }} </view>
+<scroll-view class='scroll' scroll-y="true" scroll-into-view="{{currentLrc}}" scroll-with-animation="true">
+  <view wx:for="{{ lrc }}" wx:key="{{index}}" id='el-{{index}}' class='{{ currentLrc == "el-"+index ? "red" : "" }}' > {{ lrc[index] }} </view>
 </scroll-view>

@@ -81,6 +81,17 @@ Page({
         this.setData({
           current: song.currentTime
         })
+      };
+
+      let { currentTime : c } = song;
+      let min = Math.floor(c / 60);
+      let sec = Math.floor(c % 60);
+      var attr = (min < 10 ? "0" + min : "" + min) + ":" + (sec < 10 ? "0" + sec : "" + sec);
+      console.log(attr);
+      if (attr in this.data.lrc && "el-" + attr !== this.data.currentLrc) {
+        this.setData({
+          currentLrc: "el-" + attr
+        })
       }
       
     }) 
