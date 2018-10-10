@@ -1,39 +1,11 @@
 {
   "pages": [
-    "pages/index/index",
-    "pages/subject/subject",
-    "pages/user/user",
-    "pages/detail/detail",
-    "pages/subject-list/subject-list"
+    "pages/classic/classic"
   ],
   "window": {
     "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#3b3faa",
-    "navigationBarTitleText": "Movie",
+    "navigationBarBackgroundColor": "#f72525",
+    "navigationBarTitleText": "江上远帆",
     "navigationBarTextStyle": "#fff"
-  },
-  "tabBar": {
-    "list": [
-      {
-        "pagePath": "pages/index/index",
-        "text": "首页",
-        "iconPath": "assets/image/index.png",
-        "selectedIconPath": "assets/image/index-active.png"
-      },
-      {
-        "pagePath": "pages/subject/subject",
-        "text": "分类",
-        "iconPath": "assets/image/subject.png",
-        "selectedIconPath": "assets/image/subject-active.png"
-      },
-      {
-        "pagePath": "pages/user/user",
-        "text": "用户",
-        "iconPath": "assets/image/user.png",
-        "selectedIconPath": "assets/image/user-active.png"
-      }
-    ],
-    "color": "#333",
-    "selectedColor": "#668B8B"
   }
 }
